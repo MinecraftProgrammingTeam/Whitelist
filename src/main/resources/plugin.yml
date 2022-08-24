@@ -1,0 +1,12 @@
+name: Whitelist
+version: '${project.version}'
+main: top.minept.whitelist.Whitelist
+api-version: 1.19
+authors: [ MPTXHUIHUI ]
+description: MPT第二个插件-1.19白名单
+website: https://www.minept.top/
+commands:
+  WAdd:
+    description: 添加用户到白名单。用法：/wadd <用户名>
+  WDel:
+    description: 删除用户到白名单。用法：/wdel <用户名>
