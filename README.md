@@ -19,3 +19,4 @@
 
 5、MPT官网:https://www.minept.top/
 
+Gitee链接：[Gitee](https://gitee.com/minecraft-programming-team/whitelist "Gitee")
