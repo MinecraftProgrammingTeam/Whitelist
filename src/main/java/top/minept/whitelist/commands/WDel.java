@@ -30,16 +30,13 @@ public class WDel implements CommandExecutor {
         List<String> whitelist = configP.getConfig().getStringList("whitelisted-players");
         if(whitelist.contains(args[0])){
             Player delPlayer = Bukkit.getPlayer(args[0]); // 操控player
-
-            if(delPlayer == null){
-                sender.sendMessage(normal + ChatColor.RED + "此玩家虽然在白名单里，但是服务器里没有此玩家的数据，" +
-                        "因而删除无效，请先让此玩家上一下游戏再删除。");
-                return false;
-            }
             whitelist.remove(args[0]);
             configP.getConfig().set("whitelisted-players", whitelist);
             configP.saveConfig();
             sender.sendMessage(normal + "删除成功！");
+            if(delPlayer == null){
+                return false;
+            }
             if(delPlayer.isOnline()){
                 sender.sendMessage(normal + ChatColor.RED + "检测到被删除玩家在线，正在进行强制退场。");
                 delPlayer.kickPlayer(ChatColor.translateAlternateColorCodes('&',
